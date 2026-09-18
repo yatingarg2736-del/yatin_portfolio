@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yatin Garg | Real Estate Performance Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#0d0d0d;-webkit-font-smoothing:antialiased}
+
+:root{
+  --ink:#0d0d0d;
+  --mid:#4a4a4a;
+  --soft:#888;
+  --rule:#e4e4e0;
+  --bg:#f5f5f3;
+  --navy:#0a2463;
+  --white:#fff;
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:.95rem;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:.78rem;font-weight:500;color:var(--mid);text-decoration:none}
+.nav-link:hover{color:var(--navy)}
+.nav-cta{font-size:.78rem;font-weight:600;color:#fff;background:var(--navy);padding:9px 22px;text-decoration:none}
+.nav-cta:hover{opacity:.88}
+
+/* LAYOUT */
+.wrap{max-width:1040px;margin:0 auto;padding:0 48px}
+.sec{padding:64px 0;border-top:1px solid var(--rule)}
+.sec-tag{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
+h2{font-size:2rem;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:32px;letter-spacing:-.02em}
+p{font-size:.92rem;color:var(--mid);line-height:1.7}
+
+/* HERO */
+.hero{padding:108px 0 52px}
+.hero-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:var(--ink);max-width:700px;margin-bottom:16px}
+.hero h1 span{color:var(--navy)}
+.hero-sub{font-size:1rem;font-weight:400;color:var(--mid);margin-bottom:32px;max-width:540px;line-height:1.65}
+.btn{display:inline-block;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--navy);padding:13px 30px;text-decoration:none;transition:opacity .18s}
+.btn:hover{opacity:.86}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);margin-left:12px}
+.btn-outline:hover{background:var(--navy);color:#fff;opacity:1}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:48px}
+.met{padding:22px 20px}
+.met:not(:last-child){border-right:1px solid var(--rule)}
+.met-n{font-size:1.9rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:5px}
+.met-l{font-size:.72rem;font-weight:400;color:var(--soft);line-height:1.45}
+
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:24px}
+.prob-item{background:var(--bg);padding:18px 22px;font-size:.88rem;font-weight:400;color:var(--mid);line-height:1.55}
+.prob-close{font-size:.95rem;font-weight:600;color:var(--ink)}
+
+/* SOLUTION */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule)}
+.sol-col{padding:28px 28px;border-right:1px solid var(--rule)}
+.sol-col:last-child{border-right:none}
+.sol-num{font-size:.68rem;font-weight:600;color:var(--navy);letter-spacing:.1em;display:block;margin-bottom:8px}
+.sol-col h3{font-size:1rem;font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule);color:var(--ink)}
+.sol-col ul{list-style:none;padding:0}
+.sol-col ul li{font-size:.84rem;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--rule);line-height:1.45}
+.sol-col ul li:last-child{border-bottom:none}
+
+/* CASE STUDIES */
+.cs{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.cs:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cs-hd{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.cs-badge{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;padding:4px 12px}
+.cs-title{font-size:1.1rem;font-weight:700;color:var(--ink)}
+.cs-body{display:grid;grid-template-columns:1.2fr 1.5fr 1fr;border:1px solid var(--rule)}
+.cs-col{padding:22px 24px;border-right:1px solid var(--rule)}
+.cs-col:last-child{border-right:none}
+.cs-lbl{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:14px}
+.cs-col ul{list-style:none;padding:0}
+.cs-col ul li{font-size:.82rem;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--rule);line-height:1.45}
+.cs-col ul li:last-child{border-bottom:none}
+.imp-n{font-size:1.5rem;font-weight:800;color:var(--ink);display:block;line-height:1.1}
+.imp-d{font-size:.72rem;font-weight:400;color:var(--soft);display:block;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.imp-d:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.brand-names{font-size:.88rem;font-weight:600;line-height:2.1;color:var(--ink)}
+.cs-note{font-size:.7rem;font-style:italic;color:var(--soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--rule)}
+
+/* INDUSTRIES */
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:20px}
+.ind-item{background:#fff;padding:14px 20px;font-size:.84rem;color:var(--mid)}
+.ind-close{font-size:.9rem;color:var(--mid);line-height:1.7}
+.ind-close strong{color:var(--ink)}
+
+/* FRAMEWORK */
+.fw-steps{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);margin-bottom:18px}
+.fw-step{padding:26px 20px;border-right:1px solid var(--rule)}
+.fw-step:last-child{border-right:none}
+.fw-n{font-size:1.6rem;font-weight:800;color:var(--rule);display:block;margin-bottom:10px}
+.fw-l{font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.4}
+.fw-close{font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--mid);text-transform:uppercase}
+
+/* FIT */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.fit-item{background:var(--bg);padding:20px 24px;font-size:.88rem;color:var(--mid);line-height:1.55}
+.fit-item::before{content:"✓  ";font-weight:700;color:var(--navy)}
+
+/* FOUNDER */
+.founder-sec{background:var(--navy);padding:60px 0}
+.founder-sec blockquote{font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.88);line-height:1.75;max-width:700px;margin-bottom:20px}
+.founder-sec blockquote strong{font-weight:700;color:#fff}
+.founder-attr{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase}
+
+/* BOOKING */
+.booking-sec{background:var(--bg);padding:64px 0;border-top:1px solid var(--rule)}
+.booking-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.booking-left h2{margin-bottom:12px}
+.booking-left p{margin-bottom:20px;font-size:.88rem}
+.booking-point{font-size:.82rem;color:var(--mid);padding:7px 0;border-bottom:1px solid var(--rule);line-height:1.5}
+.booking-point::before{content:"→  ";color:var(--navy);font-weight:700}
+.calendly-wrap{background:#fff;border:1px solid var(--rule);overflow:hidden}
+.book-card{background:#fff;border:1px solid var(--rule)}
+.book-card-top{background:var(--navy);padding:28px 28px 24px}
+.book-card-label{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
+.book-card-host{display:flex;align-items:center;gap:14px}
+.book-avatar{width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff;flex-shrink:0}
+.book-name{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:2px}
+.book-role{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.55)}
+.book-card-details{padding:22px 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.book-detail-row{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--mid);line-height:1.4}
+.book-icon{font-size:.9rem;flex-shrink:0;width:20px}
+.book-card-agenda{padding:20px 28px;border-bottom:1px solid var(--rule)}
+.book-agenda-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+.book-agenda-item{font-size:.82rem;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--rule);line-height:1.45}
+.book-agenda-item:last-child{border-bottom:none}
+.book-agenda-item::before{content:"→  ";color:var(--navy);font-weight:700}
+.book-cta-btn{display:block;background:var(--navy);color:#fff;font-size:.88rem;font-weight:700;letter-spacing:.04em;text-align:center;padding:18px 28px;text-decoration:none;transition:opacity .18s;margin:0}
+.book-cta-btn:hover{opacity:.86}
+.book-note{font-size:.65rem;color:var(--soft);text-align:center;padding:10px 28px 14px;background:#fff}
+
+/* FINAL CTA */
+.final-cta{text-align:center;padding:64px 0;border-top:1px solid var(--rule)}
+.final-cta h2{max-width:520px;margin:0 auto 12px}
+.final-cta p{margin-bottom:28px;font-size:.9rem}
+
+/* FOOTER */
+footer{background:var(--ink);padding:40px 48px}
+.foot-inner{max-width:1040px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-brand{font-size:.88rem;font-weight:700;color:rgba(255,255,255,.85)}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap}
+.foot-links a{font-size:.78rem;color:rgba(255,255,255,.45);text-decoration:none}
+.foot-links a:hover{color:rgba(255,255,255,.9)}
+.foot-loc{font-size:.7rem;color:rgba(255,255,255,.25);text-align:center;padding-top:14px;max-width:1040px;margin:0 auto}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .wrap{padding:0 20px}
+  .hero h1{font-size:2rem}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .met:not(:last-child){border-right:none;border-bottom:1px solid var(--rule)}
+  .prob-grid,.sol-grid,.cs-body,.fw-steps,.booking-grid{grid-template-columns:1fr}
+  .sol-col,.cs-col,.fw-step{border-right:none;border-bottom:1px solid var(--rule)}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .fit-grid{grid-template-columns:1fr}
+  footer{padding:32px 20px}
+  .foot-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Yatin Garg</a>
+  <div class="nav-right">
+    <a class="nav-link" href="#work">Case Studies</a>
+    <a class="nav-link" href="#framework">Process</a>
+    <a class="nav-link" href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">Book a Call</a>
+    <a class="nav-cta" href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">Book a Growth Audit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">Real Estate Performance Marketing</p>
+    <h1>We Help <span>Real Estate Brands</span> Generate Qualified Leads at Scale</h1>
+    <p class="hero-sub">Structured Campaigns. Inquiry Funnel Optimization. CRM and Follow-up Automation.</p>
+    <a class="btn" href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">Book a Growth Audit</a>
+    <a class="btn btn-outline" href="#work">View Case Studies</a>
+
+    <div class="metrics">
+      <div class="met">
+        <div class="met-n">₹40L+</div>
+        <div class="met-l">Ad Budget Managed</div>
+      </div>
+      <div class="met">
+        <div class="met-n">2.6x</div>
+        <div class="met-l">ROI Delivered</div>
+      </div>
+      <div class="met">
+        <div class="met-n">30%</div>
+        <div class="met-l">CPL Reduction</div>
+      </div>
+      <div class="met">
+        <div class="met-n">35%</div>
+        <div class="met-l">ROAS Improvement</div>
+      </div>
+      <div class="met">
+        <div class="met-n">3x</div>
+        <div class="met-l">Lead Engagement via Automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-tag">The Problem</p>
+    <h2>Real estate brands spend big on ads and bleed leads in the funnel.</h2>
+    <div class="prob-grid">
+      <div class="prob-item">High ad spend with no structured campaign architecture</div>
+      <div class="prob-item">Leads generated but never followed up in time</div>
+      <div class="prob-item">No creative testing framework across project launches</div>
+      <div class="prob-item">Inquiry forms convert but site visits do not</div>
+      <div class="prob-item">Attribution across Meta, Google, and portals is unclear</div>
+      <div class="prob-item">CRM sits unused while sales teams work on spreadsheets</div>
+    </div>
+    <p class="prob-close">The result: inflated cost per qualified lead and unpredictable project pipelines.</p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-tag">Our Solution</p>
+    <h2>Performance marketing systems built for the real estate sales cycle.</h2>
+    <div class="sol-grid">
+      <div class="sol-col">
+        <span class="sol-num">01 / Service</span>
+        <h3>Project Launch Campaigns</h3>
+        <ul>
+          <li>Google and Meta Ads full-funnel setup</li>
+          <li>Budget allocation across project phases</li>
+          <li>Creative testing across formats and audiences</li>
+          <li>Weekly bid and targeting optimization</li>
+        </ul>
+      </div>
+      <div class="sol-col">
+        <span class="sol-num">02 / Service</span>
+        <h3>Inquiry to Site Visit Optimization</h3>
+        <ul>
+          <li>Landing page and form optimization</li>
+          <li>Click-to-lead rate improvement</li>
+          <li>Funnel drop-off analysis</li>
+          <li>Cost per qualified lead reduction</li>
+        </ul>
+      </div>
+      <div class="sol-col">
+        <span class="sol-num">03 / Service</span>
+        <h3>CRM and Follow-up Automation</h3>
+        <ul>
+          <li>WhatsApp workflows and drip sequences</li>
+          <li>CRM integrations (Salesforce, LeadSquared, Sell.Do)</li>
+          <li>Lead scoring and qualification systems</li>
+          <li>Real-time dashboards via Looker Studio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <p class="sec-tag">Case Studies</p>
+    <h2>Results from real campaigns.</h2>
+
+    <div class="cs">
+      <div class="cs-hd">
+        <span class="cs-badge">Real Estate</span>
+        <span class="cs-title">Kumar World — Multi-Platform Lead Generation</span>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col">
+          <div class="cs-lbl">Challenge</div>
+          <p style="font-size:.86rem;line-height:1.65;color:var(--mid)">High ad spend across Google and Meta with inconsistent lead quality and no unified attribution across platforms.</p>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Execution</div>
+          <ul>
+            <li>Multi-platform campaign restructure</li>
+            <li>Attribution tracking across all touchpoints</li>
+            <li>Creative A/B testing by property type</li>
+            <li>Budget management across ₹10L+ spend</li>
+            <li>Strategic reporting and weekly iteration</li>
+          </ul>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Outcome</div>
+          <span class="imp-n">1.75%</span><span class="imp-d">CTR achieved</span>
+          <span class="imp-n">↑ ROI</span><span class="imp-d">Targets maintained throughout</span>
+          <span class="imp-n">Faster</span><span class="imp-d">Campaign iteration cycles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs">
+      <div class="cs-hd">
+        <span class="cs-badge">Multi-Region</span>
+        <span class="cs-title">Travel and Experiences Brand — Regional Scaling</span>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col">
+          <div class="cs-lbl">Challenge</div>
+          <p style="font-size:.86rem;line-height:1.65;color:var(--mid)">Inconsistent ROI across regions with heavy ad spend and no campaign structure or automation in place.</p>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Execution</div>
+          <ul>
+            <li>Rebuilt full campaign architecture</li>
+            <li>Region-specific audience targeting</li>
+            <li>Creative testing cycles by region</li>
+            <li>Landing page optimization</li>
+            <li>WhatsApp automation workflows</li>
+            <li>Automated reporting dashboards</li>
+          </ul>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Impact</div>
+          <span class="imp-n">₹40L</span><span class="imp-d">Ad budget managed</span>
+          <span class="imp-n">2.6x</span><span class="imp-d">ROI delivered</span>
+          <span class="imp-n">+15%</span><span class="imp-d">Click-to-lead rate</span>
+          <span class="imp-n">3x</span><span class="imp-d">Engagement via automation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs">
+      <div class="cs-hd">
+        <span class="cs-badge">D2C and eCommerce</span>
+        <span class="cs-title">Agency Portfolio — Multi-Brand Scaling</span>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col">
+          <div class="cs-lbl">Brands</div>
+          <div class="brand-names">Swadesi Stuff<br/>mCaffeine<br/>Phool<br/>The Petsaurus<br/>October Jaipur<br/>The Lagaadi</div>
+          <p class="cs-note">Contributed as part of the agency growth team on strategy, optimization, and scaling.</p>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Execution Focus</div>
+          <ul>
+            <li>Campaign restructuring</li>
+            <li>Keyword and bid optimization</li>
+            <li>Funnel segmentation</li>
+            <li>Structured monthly scaling plans</li>
+            <li>Weekly pivot strategy calls</li>
+          </ul>
+        </div>
+        <div class="cs-col">
+          <div class="cs-lbl">Results</div>
+          <span class="imp-n">20-35%</span><span class="imp-d">ROAS improvement</span>
+          <span class="imp-n">30%</span><span class="imp-d">CPA reduction</span>
+          <span class="imp-n">+0.75%</span><span class="imp-d">Conversion rate lift</span>
+          <span class="imp-n">2x+</span><span class="imp-d">AOV growth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-tag">Industry Experience</p>
+    <h2>Cross-industry systems. Real estate focus.</h2>
+    <div class="ind-grid">
+      <div class="ind-item">Real Estate and Property</div>
+      <div class="ind-item">Travel and Experiences</div>
+      <div class="ind-item">D2C Skincare and Personal Care</div>
+      <div class="ind-item">Sustainable Luxury</div>
+      <div class="ind-item">Fashion and Lifestyle</div>
+      <div class="ind-item">FMCG</div>
+      <div class="ind-item">Alcohol and Beverage (US)</div>
+      <div class="ind-item">Pet Care</div>
+      <div class="ind-item">Higher Education (US)</div>
+    </div>
+    <p class="ind-close">Every industry has a different funnel psychology, purchase cycle, and attribution model.<br/><strong>We adapt systems, not templates. Real estate is our primary focus.</strong></p>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="sec" id="framework">
+  <div class="wrap">
+    <p class="sec-tag">Growth Execution Framework</p>
+    <h2>A repeatable system for every project launch.</h2>
+    <div class="fw-steps">
+      <div class="fw-step"><span class="fw-n">01</span><span class="fw-l">Business and Funnel Audit</span></div>
+      <div class="fw-step"><span class="fw-n">02</span><span class="fw-l">Campaign Architecture Design</span></div>
+      <div class="fw-step"><span class="fw-n">03</span><span class="fw-l">Creative Testing Engine</span></div>
+      <div class="fw-step"><span class="fw-n">04</span><span class="fw-l">Automation and Tracking Setup</span></div>
+      <div class="fw-step"><span class="fw-n">05</span><span class="fw-l">Lead Quality Optimization and Scaling</span></div>
+    </div>
+    <p class="fw-close">Structured &nbsp;·&nbsp; Measurable &nbsp;·&nbsp; Scalable</p>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sec-tag">Who We Work With</p>
+    <h2>Built for developers and brokers serious about lead quality.</h2>
+    <div class="fit-grid">
+      <div class="fit-item">Residential developers with active project launches</div>
+      <div class="fit-item">Real estate brands spending ₹2L+ per month on ads</div>
+      <div class="fit-item">Brokerages focused on qualified site visits, not just inquiry volume</div>
+      <div class="fit-item">Teams ready to connect marketing spend to sales pipeline</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER NOTE -->
+<div class="founder-sec">
+  <div class="wrap">
+    <blockquote>Most real estate brands run ads, collect inquiries, and call it marketing. <strong>They are not measuring what actually matters: qualified leads, site visits, and cost per booking.</strong> I built this practice to bring performance discipline into real estate marketing. Structure, attribution, and automation — applied to the full sales cycle, not just the ad account.</blockquote>
+    <p class="founder-attr">Yatin Garg, Founder</p>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div class="booking-sec" id="booking">
+  <div class="wrap">
+    <div class="booking-grid">
+      <div class="booking-left">
+        <p class="sec-tag">Book a Meeting</p>
+        <h2>Let's talk about your project pipeline.</h2>
+        <p>In 30 minutes we will cover your current setup, the biggest leaks in your lead funnel, and a clear first step toward better qualified leads.</p>
+        <div style="margin-top:20px">
+          <div class="booking-point">Your current campaign structure reviewed</div>
+          <div class="booking-point">Top gaps in your lead funnel identified</div>
+          <div class="booking-point">Clear next steps, no pitch, no fluff</div>
+          <div class="booking-point">30 minutes. Free. No commitment.</div>
+        </div>
+        <p style="margin-top:20px;font-size:.78rem;color:var(--soft)">Prefer email? Write to <a href="mailto:yatingarg2736@gmail.com" style="color:var(--navy);font-weight:600;text-decoration:none">yatingarg2736@gmail.com</a></p>
+      </div>
+      <div>
+        <div class="book-card">
+          <div class="book-card-top">
+            <div class="book-card-label">30-Minute Growth Audit</div>
+            <div class="book-card-host">
+              <div class="book-avatar">YG</div>
+              <div>
+                <div class="book-name">Yatin Garg</div>
+                <div class="book-role">Performance Marketing Specialist</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-card-details">
+            <div class="book-detail-row">
+              <span class="book-icon">⏱</span>
+              <span>30 minutes, one-on-one</span>
+            </div>
+            <div class="book-detail-row">
+              <span class="book-icon">📅</span>
+              <span>Weekdays, 9 am to 5 pm</span>
+            </div>
+            <div class="book-detail-row">
+              <span class="book-icon">💬</span>
+              <span>Google Meet or Phone call</span>
+            </div>
+            <div class="book-detail-row">
+              <span class="book-icon">✓</span>
+              <span>Free. No commitment.</span>
+            </div>
+          </div>
+          <div class="book-card-agenda">
+            <div class="book-agenda-title">What we cover</div>
+            <div class="book-agenda-item">Your current ad setup and spend structure</div>
+            <div class="book-agenda-item">Top 2 leaks in your lead funnel</div>
+            <div class="book-agenda-item">A clear, actionable next step</div>
+          </div>
+          <a class="book-cta-btn" href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">
+            Pick a Time on Calendly
+          </a>
+          <p class="book-note">Opens Cal.com in a new tab. Free booking, instant confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="wrap">
+    <p class="sec-tag" style="text-align:center">Get Started</p>
+    <h2>Generating leads is easy. Generating qualified ones takes a system.</h2>
+    <p>If you are ready to build that system, let us talk.</p>
+    <a class="btn" href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">Book a Growth Audit</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <span class="foot-brand">Yatin Garg — Real Estate Performance Marketing</span>
+    <div class="foot-links">
+      <a href="mailto:yatingarg2736@gmail.com">yatingarg2736@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yatin--garg/" target="_blank">LinkedIn</a>
+      <a href="https://cal.com/yatin-garg-9cnpyk/30min" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+  </div>
+  <p class="foot-loc">India</p>
+</footer>
+
+</body>
+</html>
